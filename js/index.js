@@ -69,12 +69,34 @@ for (var i=0; i < links.length; i++) {
 let inputFields = document.querySelectorAll('.form-contact input');
 for (let i = 0; i < inputFields.length; i++) {
     inputFields[i].addEventListener('keyup', (event) => {
-    console.log('keyup: ', event.target.value);
-    inputFields[i].addEventListener('keydown', (event) => {
-    console.log('keydown: ', event.target.value)
-    inputFields[i].addEventListener('input', (event) => {
-    console.log('input: ', event.target.value)
+        console.log('keyup: ', event.target.value);
+        inputFields[i].addEventListener('keydown', (event) => {
+            console.log('keydown: ', event.target.value)
+            inputFields[i].addEventListener('input', (event) => {
+                console.log('input: ', event.target.value)
+            })
         })
     })
-    })
 }
+
+//first stopPropagation()
+const textContent = document.querySelector('.text-content');
+textContent.addEventListener('click', (event) => {
+    alert('Text Content Div');
+})
+const textContentParagraph = document.querySelector('.text-content p');
+textContentParagraph.addEventListener('click', (event) => {
+    event.stopPropagation();
+    alert('Paragraph');
+});
+
+//second stopPropagation()
+const imageContent = document.querySelector('.img-content');
+imageContent.addEventListener('click', (event) => {
+    alert('Image Div');
+})
+const imageContent2 = document.querySelector('.img-content img');
+imageContent2.addEventListener('click', (event) => {
+    event.stopPropagation();
+    alert('Image');
+});
