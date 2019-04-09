@@ -35,6 +35,8 @@ button3.addEventListener('mouseenter', (event) => {
     button3.innerHTML = 'Sign Me Up!'
   })
 
+  
+
 //Skylar's event listeners
 const linksin = document.querySelectorAll('a');
 for (var i=0; i < linksin.length; i++) {
@@ -61,4 +63,18 @@ for (var i=0; i < links.length; i++) {
        event.preventDefault();
        // prevent default refresh on anchors
        });
+}
+
+//contact form keys
+let inputFields = document.querySelectorAll('.form-contact input');
+for (let i = 0; i < inputFields.length; i++) {
+    inputFields[i].addEventListener('keyup', (event) => {
+    console.log('keyup: ', event.target.value);
+    inputFields[i].addEventListener('keydown', (event) => {
+    console.log('keydown: ', event.target.value)
+    inputFields[i].addEventListener('input', (event) => {
+    console.log('input: ', event.target.value)
+        })
+    })
+    })
 }
