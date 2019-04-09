@@ -56,6 +56,15 @@ window.addEventListener('load', (event) => {
        alert("The Page Loaded");
 });
 
+const formChange = document.querySelector('input');
+formChange.addEventListener('focus', (event) => {
+    event.target.style.background = 'pink';
+});
+
+formChange.addEventListener('blur', (event) => {
+    event.target.style.background = '';
+});
+
 //prevent default for nav items
 const links = document.querySelectorAll('a');
 for (var i=0; i < links.length; i++) {
@@ -82,12 +91,18 @@ for (let i = 0; i < inputFields.length; i++) {
 //first stopPropagation()
 const textContent = document.querySelector('.text-content');
 textContent.addEventListener('click', (event) => {
-    alert('Text Content Div');
+    event.target.style.background = 'blue';
 })
 const textContentParagraph = document.querySelector('.text-content p');
 textContentParagraph.addEventListener('click', (event) => {
     event.stopPropagation();
-    alert('Paragraph');
+    event.target.style.color = 'white';
+});
+
+const textContentParagraph2 = document.querySelector('.text-content p')[1];
+textContentParagraph2.addEventListener('click', (event) => {
+    event.stopPropagation();
+    event.target.style.color = 'white';
 });
 
 //second stopPropagation()
