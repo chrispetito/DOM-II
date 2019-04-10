@@ -99,12 +99,6 @@ textContentParagraph.addEventListener('click', (event) => {
     event.target.style.color = 'white';
 });
 
-const textContentParagraph2 = document.querySelector('.text-content p')[1];
-textContentParagraph2.addEventListener('click', (event) => {
-    event.stopPropagation();
-    event.target.style.color = 'white';
-});
-
 //second stopPropagation()
 const imageContent = document.querySelector('.img-content');
 imageContent.addEventListener('click', (event) => {
